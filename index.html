@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#16110c">
+<title>Enjoy The Trip · Car Rental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:hsl(28 24% 9%);--ink-1:hsl(28 19% 13%);--ink-r:hsl(28 16% 17%);--ink-s:hsl(28 30% 6%);
+  --cream:hsl(38 32% 92%);--soft:hsl(38 16% 64%);--mute:hsl(38 11% 46%);
+  --gold:hsl(40 56% 56%);--golds:hsl(40 58% 72%);--goldd:hsl(36 46% 36%);
+  --hi:42 66% 96%;--sh:28 60% 3%;
+  --e1:0 1px 1px hsl(var(--sh)/.5),0 3px 7px hsl(var(--sh)/.4),0 10px 22px hsl(var(--sh)/.3),inset 0 1px 0 hsl(var(--hi)/.07);
+  --sunk:inset 0 2px 6px hsl(var(--sh)/.7),inset 0 1px 2px hsl(var(--sh)/.6),inset 0 -1px 0 hsl(var(--hi)/.05);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 60% at 50% 0%,hsl(40 40% 15%/.55),transparent 60%),var(--ink);color:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.003em;min-height:100vh}
+.grain{position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+/* hero */
+.hero{text-align:center;padding:calc(46px + env(safe-area-inset-top)) 18px 38px}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.hero h1{font-family:'Cormorant Garamond';font-weight:700;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1;margin:12px 0 6px;color:transparent;background:linear-gradient(150deg,#ecd9a4 12%,#c9a052 60%,#9a7733);-webkit-background-clip:text;background-clip:text}
+.hero .tag{font-size:.95rem;color:var(--soft);font-weight:300;letter-spacing:.04em}
+.hero .rule{width:64px;height:1px;margin:22px auto 0;background:linear-gradient(90deg,transparent,hsl(40 56% 56%/.6),transparent)}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;padding:8px 0 60px}
+.card{background:linear-gradient(180deg,var(--ink-r),var(--ink-1));border-radius:20px;overflow:hidden;box-shadow:var(--e1);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-4px)}
+.photo{aspect-ratio:16/10;background:linear-gradient(160deg,var(--ink-1),var(--ink-s));display:grid;place-items:center;position:relative;box-shadow:var(--sunk)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .ph{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mute)}
+.photo .ph svg{width:46px;height:46px;stroke:var(--goldd);stroke-width:1.2;fill:none;opacity:.8}
+.photo .ph span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.photo .yr{position:absolute;top:12px;right:12px;font-family:'Cormorant Garamond';font-weight:700;font-size:.9rem;color:var(--ink);background:linear-gradient(155deg,#ecd9a4,#c2a043);padding:3px 11px;border-radius:20px;box-shadow:0 2px 6px hsl(var(--sh)/.4)}
+.body{padding:16px 18px 18px}
+.nm{font-family:'Cormorant Garamond';font-weight:600;font-size:1.45rem;color:var(--cream);line-height:1.1}
+.ty{font-size:.74rem;color:var(--gold);font-weight:500;margin-top:3px;letter-spacing:.02em}
+.colors{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.col{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--soft)}
+.sw{width:16px;height:16px;border-radius:50%;box-shadow:inset 0 1px 1px hsl(var(--hi)/.4),0 1px 2px hsl(var(--sh)/.5),0 0 0 1px hsl(38 12% 40%/.3)}
+.qty{font-size:.6rem;color:var(--gold);font-weight:700;margin-left:1px}
+/* foot */
+.foot{text-align:center;padding:30px 18px calc(40px + env(safe-area-inset-bottom));box-shadow:inset 0 1px 0 hsl(var(--hi)/.05)}
+.foot .name{font-family:'Cormorant Garamond';font-weight:600;font-size:1.3rem;color:var(--golds)}
+.foot .meta{font-size:.78rem;color:var(--mute);margin-top:6px}
+.cta{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-weight:600;font-size:.95rem;color:hsl(28 28% 11%);padding:14px 28px;border-radius:30px;background:linear-gradient(155deg,#ecd9a4,#c2a043);box-shadow:0 8px 24px hsl(var(--sh)/.5),inset 0 1px 0 hsl(var(--hi)/.5);text-decoration:none}
+.reveal{opacity:0;transform:translateY(16px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="hero">
+  <div class="eyebrow">Enjoy The Trip</div>
+  <h1 class="serif">Car Rental</h1>
+  <div class="tag">Catálogo de unidades · disponibilidad por color</div>
+  <div class="rule"></div>
+</div>
+<div class="wrap"><div class="grid" id="grid"></div></div>
+<div class="foot">
+  <div class="name">Enjoy The Trip · Car Rental</div>
+  <div class="meta">Reserva tu unidad · pregunta por disponibilidad y tarifas</div>
+  <a class="cta" id="wa" href="#">Reservar por WhatsApp
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+<script>
+const COLORS={celeste:"#9fd0e6",blanco:"#f2f0ec",rojo:"#b0342f",gris:"#8a8b8f",negro:"#1c1c1e"};
+const CARS=[
+ {n:"Aveo LT",ty:"Sedán",y:2026,c:[["celeste"],["blanco"],["rojo"]]},
+ {n:"Aveo Hatchback LT",ty:"Hatchback",y:2026,c:[["gris"],["blanco"]]},
+ {n:"Hyundai HB20S",ty:"Sedán",y:2026,c:[["gris"],["blanco"]]},
+ {n:"VW Virtus Comfortline",ty:"Sedán",y:2026,c:[["blanco"],["rojo"],["gris"]]},
+ {n:"Nissan Versa Sense",ty:"Sedán",y:2025,c:[["gris"],["blanco"]]},
+ {n:"Hyundai Santa Fe",ty:"SUV · 8 pasajeros",y:2026,c:[["blanco"]]},
+ {n:"Kia K4",ty:"Sedán",y:2026,c:[["blanco"],["rojo"]]},
+ {n:"Hyundai Grand i10",ty:"Compacto",y:2026,c:[["blanco",3],["rojo",2],["gris",1]]},
+ {n:"Suzuki Ertiga",ty:"Minivan · 7 pasajeros",y:2026,c:[["gris"],["blanco"]]},
+ {n:"Chevrolet Suburban HC",ty:"SUV grande",y:2026,c:[["blanco"],["negro"]]},
+ {n:"VW Jetta",ty:"Sedán",y:2025,c:[["blanco"],["negro"]]},
+ {n:"VW Jetta",ty:"Sedán",y:2026,c:[["blanco",3]]},
+];
+const carIcon=`<svg viewBox="0 0 24 24"><path d="M3 13l2-5a3 3 0 0 1 2.8-2h8.4A3 3 0 0 1 19 8l2 5v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="16.5" r="1.3"/><circle cx="16.5" cy="16.5" r="1.3"/><path d="M3 13h18"/></svg>`;
+const g=document.getElementById("grid");
+CARS.forEach((car,i)=>{
+  const colors=car.c.map(([name,qty])=>`<span class="col"><span class="sw" style="background:${COLORS[name]||'#888'}"></span>${name.charAt(0).toUpperCase()+name.slice(1)}${qty?`<span class="qty">×${qty}</span>`:''}</span>`).join("");
+  const slug=(car.n+"-"+car.y).toLowerCase().replace(/[^a-z0-9]+/g,"-");
+  g.innerHTML+=`<div class="card reveal" style="animation-delay:${i*.04}s">
+    <div class="photo"><div class="ph">${carIcon}<span>foto pronto</span></div><div class="yr">${car.y}</div>
+      <!-- cuando haya foto: <img src="fotos/${slug}.jpg" alt="${car.n}"> -->
+    </div>
+    <div class="body"><div class="nm serif">${car.n}</div><div class="ty">${car.ty}</div>
+      <div class="colors">${colors}</div></div></div>`;
+});
+// WhatsApp link (pon el número de Josué)
+const PHONE=""; // ej: 5213311234567
+document.getElementById("wa").href = PHONE ? `https://wa.me/${PHONE}?text=${encodeURIComponent("Hola, vi el catálogo de Enjoy The Trip y quiero reservar una unidad.")}` : "#";
+</script>
+</body>
+</html>
