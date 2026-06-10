@@ -37,8 +37,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 60
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:10px 0 30px}
 .card{background:linear-gradient(180deg,var(--card),var(--card-2));border-radius:20px;overflow:hidden;box-shadow:var(--elev);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
 .card:hover{transform:translateY(-5px);box-shadow:var(--elev2)}
-.photo{aspect-ratio:16/10;position:relative;background:#eceae5;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo{aspect-ratio:4/3;position:relative;background:linear-gradient(180deg,#fbfaf6 0%,#f0ede5 100%);overflow:hidden;border-bottom:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:contain;display:block}
 .photo .yr{position:absolute;top:12px;right:12px;font-family:'Cormorant Garamond';font-weight:700;font-size:.9rem;color:#fff;background:linear-gradient(155deg,#d8b65e,#9b772c);padding:3px 12px;border-radius:20px;box-shadow:0 2px 8px rgba(40,34,24,.35)}
 .body{padding:16px 18px 18px}
 .nm{font-family:'Cormorant Garamond';font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.08}
@@ -53,6 +53,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 60
 .foot .meta{font-size:.8rem;color:var(--mute);margin-top:6px}
 .cta{display:inline-flex;align-items:center;gap:9px;margin-top:20px;font-weight:700;font-size:.96rem;color:#fff;padding:15px 30px;border-radius:30px;background:linear-gradient(155deg,#d8b65e,#a07d2e);box-shadow:0 10px 26px rgba(155,119,44,.35),inset 0 1px 0 rgba(255,255,255,.4);text-decoration:none;transition:transform .16s cubic-bezier(.34,1.56,.64,1)}
 .cta:active{transform:scale(.96)}
+.contact{margin-top:18px;font-size:.8rem;color:var(--soft);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:center}
+.contact a{color:var(--gold-d);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(155,119,44,.25)}
+.contact .dot{color:var(--mute)}
 .reveal{opacity:0;transform:translateY(16px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes rise{to{opacity:1;transform:none}}
 </style>
@@ -72,6 +75,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 60
   <div class="meta">Reserva tu unidad · pregunta por disponibilidad y tarifas</div>
   <a class="cta" id="wa" href="#">Reservar por WhatsApp
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="contact">
+    <a href="https://wa.me/529843131640">984 313 1640</a>
+    <span class="dot">·</span>
+    <a href="mailto:svmcomercializadora@icloud.com">svmcomercializadora@icloud.com</a>
+  </div>
 </div>
 <script>
 const COLORS={celeste:"#9fd0e6",blanco:"#f4f3ef",rojo:"#b0342f",gris:"#8a8b8f",negro:"#1c1c1e"};
@@ -97,7 +105,7 @@ CARS.forEach((car,i)=>{
     <div class="body"><div class="nm serif">${car.n}</div><div class="ty">${car.ty}</div>
       <div class="colors">${colors}</div></div></div>`;
 });
-const PHONE=""; // ej: 5213311234567 (número de Josué/SVM)
+const PHONE="529843131640"; // SVM Comercializadora
 document.getElementById("wa").href = PHONE ? `https://wa.me/${PHONE}?text=${encodeURIComponent("Hola SVM, vi el catálogo y quiero reservar una unidad.")}` : "#";
 </script>
 </body>
